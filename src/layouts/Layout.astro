@@ -1,0 +1,138 @@
+---
+import '../styles/global.css';
+
+interface Props {
+	title: string;
+	description?: string;
+}
+
+const { title, description = "Suministro continuo de combustible industrial, diésel y soluciones energéticas integrales en México." } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title} | Energex</title>
+		<meta name="description" content={description} />
+
+		<!-- GOOGLE FONTS -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+		<!-- EXTERNAL CDNs (GSAP, Phosphor Icons, Swiper) -->
+		<script is:inline src="https://unpkg.com/@phosphor-icons/web"></script>
+		<script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+		<script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+		<script is:inline src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+	</head>
+	<body class="antialiased min-h-screen flex flex-col justify-between">
+		
+		<!-- B2B CORPORATE HEADER -->
+		<header class="w-full h-20 bg-white border-b border-gray-100 sticky top-0 z-50 glass-panel">
+			<div class="max-w-7xl mx-auto h-full px-6 flex items-center justify-between">
+				<!-- Logo & Brand -->
+				<a href="/" class="flex items-center group">
+					<img src="/images/ENERGEX-ROJO.png" alt="Energex Grupo Energéticos" class="h-10 md:h-12 w-auto object-contain group-hover:scale-105 transition-transform" />
+				</a>
+
+				<!-- Navigation Links -->
+				<nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-brand-dark">
+					<a href="#productos" class="hover:text-brand-primary transition-colors">Productos</a>
+					<a href="#propuesta" class="hover:text-brand-primary transition-colors">Propuesta de Valor</a>
+					<a href="#comparativa" class="hover:text-brand-primary transition-colors">Continuidad vs Riesgo</a>
+				</nav>
+
+				<!-- CTA CTA (Gerente de Compras Context) -->
+				<div class="flex items-center gap-4">
+					<a href="#cotizar" class="bg-brand-primary text-white text-xs font-bold uppercase tracking-wider px-6 py-3 rounded hover:bg-red-700 transition-all shadow-md hover:shadow-lg">
+						Solicitar Cotización
+					</a>
+				</div>
+			</div>
+		</header>
+
+		<!-- MAIN CONTENT INJECTION -->
+		<main class="flex-grow">
+			<slot />
+		</main>
+
+		<!-- INSTITUTIONAL E-E-A-T FOOTER -->
+		<footer class="bg-brand-dark text-gray-400 pt-16 pb-8 border-t border-gray-800">
+			<div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-12">
+				<!-- Brand Identity -->
+				<div class="flex flex-col gap-4">
+					<a href="/" class="inline-block">
+						<img src="/images/ENERGEX-ROJO.png" alt="Energex" class="h-8 md:h-10 w-auto object-contain drop-shadow-md brightness-0 invert opacity-90" />
+					</a>
+					<p class="text-xs text-gray-500 leading-relaxed max-w-xs">
+						Líderes en desarrollo, distribución y soluciones logísticas eficientes de energéticos a escala industrial en la República Mexicana.
+					</p>
+				</div>
+
+				<!-- Logistics & Address -->
+				<div class="flex flex-col gap-4">
+					<h4 class="text-xs font-bold uppercase tracking-widest text-white border-b border-gray-800 pb-2">Ubicación Corporativa</h4>
+					<ul class="space-y-3 text-sm">
+						<li class="flex items-start gap-2.5">
+							<i class="ph ph-map-pin text-brand-primary text-lg mt-0.5"></i>
+							<span>Cintermex Local 82, Ave. Fundidora, Monterrey, N.L., México.</span>
+						</li>
+						<li class="flex items-center gap-2.5">
+							<i class="ph ph-phone text-brand-primary text-lg"></i>
+							<span>Oficina: +52 (81) 8126 8800</span>
+						</li>
+						<li class="flex items-center gap-2.5">
+							<i class="ph ph-phone-call text-brand-primary text-lg"></i>
+							<span>Lada sin costo: 01 800 670 0044</span>
+						</li>
+					</ul>
+				</div>
+
+				<!-- Corporate Emails -->
+				<div class="flex flex-col gap-4">
+					<h4 class="text-xs font-bold uppercase tracking-widest text-white border-b border-gray-800 pb-2">Canales Directos</h4>
+					<ul class="space-y-3 text-sm">
+						<li class="flex flex-col">
+							<span class="text-[11px] uppercase text-gray-600 font-bold">Ventas Industriales</span>
+							<a href="mailto:ventas@grupoenergeticos.com" class="text-gray-300 hover:text-brand-primary transition-colors">ventas@grupoenergeticos.com</a>
+						</li>
+						<li class="flex flex-col">
+							<span class="text-[11px] uppercase text-gray-600 font-bold">Adquisiciones y Proveedores</span>
+							<a href="mailto:compras@grupoenergeticos.com" class="text-gray-300 hover:text-brand-primary transition-colors">compras@grupoenergeticos.com</a>
+						</li>
+						<li class="flex flex-col">
+							<span class="text-[11px] uppercase text-gray-600 font-bold">Capital Humano</span>
+							<a href="mailto:rh@grupoenergeticos.com" class="text-gray-300 hover:text-brand-primary transition-colors">rh@grupoenergeticos.com</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<!-- Legal Baseline -->
+			<div class="max-w-7xl mx-auto px-6 pt-8 border-t border-gray-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-500">
+				<p>&copy; 2026 Grupo Energéticos S.A. de C.V. Todos los derechos reservados.</p>
+				<div class="flex gap-6">
+					<a href="#" class="hover:text-white transition-colors">Aviso de Privacidad</a>
+					<a href="#" class="hover:text-white transition-colors">Términos y Condiciones</a>
+				</div>
+			</div>
+		</footer>
+
+		<!-- GLOBAL INITIALIZATION SCRIPT -->
+		<script is:inline>
+			document.addEventListener('DOMContentLoaded', () => {
+				// Initialize GSAP ScrollTrigger
+				if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+					gsap.registerPlugin(ScrollTrigger);
+				}
+				console.log('Energex Foundations Initialized - Core 2026 Engine Running.');
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,443 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout description="Protege tu continuidad operativa con un proveedor único de diésel, gas natural y energéticos. Suministro garantizado desde 5,000 litros con logística propia." title="Suministro Continuo de Combustible Industrial">
+	<!-- 1. HERO SECTION WITH INSTITUTIONAL VIDEO BACKGROUND -->
+	<section class="relative h-[90vh] min-h-[600px] flex items-center justify-center overflow-hidden bg-brand-dark">
+		<!-- Background Video for Desktop -->
+		<div class="absolute inset-0 z-0 overflow-hidden pointer-events-none hidden md:block">
+			<iframe 
+				id="heroVideo"
+				class="absolute top-1/2 left-1/2 w-[100vw] h-[56.25vw] min-h-[100vh] min-w-[177.77vh] -translate-x-1/2 -translate-y-1/2 scale-110 object-cover"
+				src="https://www.youtube.com/embed/XSEblk5BxfA?version=3&enablejsapi=1&html5=1&hd=1&wmode=opaque&showinfo=0&rel=0&controls=0&playsinline=1&autoplay=1&mute=1&loop=1&playlist=XSEblk5BxfA" 
+				title="Energex Corporate Video"
+				frameborder="0" 
+				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+			></iframe>
+			<!-- Dark Overlay for Readability -->
+			<div class="absolute inset-0 bg-brand-dark/70 mix-blend-multiply"></div>
+		</div>
+
+		<!-- Mobile Static Background Fallback -->
+		<div class="absolute inset-0 z-0 bg-gradient-to-b from-brand-dark via-brand-dark/90 to-brand-dark md:hidden"></div>
+
+		<!-- Content Overlay -->
+		<div class="relative z-10 max-w-5xl mx-auto px-6 text-center text-white space-y-6">
+			<span class="inline-flex items-center gap-2 bg-brand-primary/10 border border-brand-primary/30 text-white text-xs font-black tracking-widest uppercase px-4 py-1.5 rounded-full">
+				<span class="w-2 h-2 rounded-full bg-brand-primary animate-pulse"></span>
+				Infraestructura Logística en México
+			</span>
+			
+			<h1 class="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-[1.1] max-w-4xl mx-auto drop-shadow-sm">
+				Suministro continuo de combustible para transporte, flotillas, hornos y calderas
+			</h1>
+			
+			<p class="text-base sm:text-xl text-gray-300 max-w-2xl mx-auto font-light leading-relaxed">
+				Protege tu continuidad operativa con un proveedor único. Desde abasto de diésel y combustibles alternos de alto rendimiento.
+			</p>
+			
+			<div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+				<a href="#cotizar" class="w-full sm:w-auto bg-brand-primary text-white text-sm font-bold uppercase tracking-wider px-8 py-4 rounded shadow-xl hover:bg-red-700 transition-all transform hover:-translate-y-0.5 text-center">
+					Cotizar Suministro Industrial
+				</a>
+			</div>
+			
+			<p class="text-xs text-gray-400 font-mono tracking-wide">
+				* Pedido mínimo obligatorio desde 5,000 litros.
+			</p>
+		</div>
+
+		<!-- Subtle Bottom Gradient Scroll Indicator -->
+		<div class="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white to-transparent pointer-events-none"></div>
+	</section>
+
+	<!-- 2. PRODUCT PORTFOLIO SECTION -->
+	<section id="productos" class="py-24 bg-white border-b border-gray-100">
+		<div class="max-w-7xl mx-auto px-6">
+			<div class="text-center max-w-3xl mx-auto mb-20">
+				<span class="text-xs font-bold uppercase tracking-widest text-brand-primary block mb-2">Soluciones Energéticas</span>
+				<h2 class="text-3xl md:text-4xl font-black tracking-tight text-brand-dark">Nuestros Productos</h2>
+				<div class="h-1 w-12 bg-brand-primary mx-auto mt-4 rounded-full"></div>
+			</div>
+
+			<div class="grid grid-cols-1 md:grid-cols-3 gap-8 cards-container">
+				<!-- Card 1: Diésel -->
+				<div class="product-card bg-white border border-gray-200/80 rounded-xl overflow-hidden shadow-sm hover:shadow-xl hover:border-brand-primary/30 transition-all duration-300 flex flex-col h-full">
+					<div class="h-52 bg-gray-100 relative overflow-hidden">
+						<!-- Dummy Placeholder Image for easy replacement -->
+						<img src="/images/diesel.webp" alt="Abasto de Diésel Industrial" class="w-full h-full object-cover  contrast-125 mix-blend-multiply opacity-90" />
+						<div class="absolute top-4 left-4 bg-brand-dark text-white text-[10px] font-bold tracking-wider uppercase px-2.5 py-1 rounded">Logística Eficiente</div>
+					</div>
+					<div class="p-8 flex flex-col flex-grow">
+						<h3 class="text-xl font-bold text-brand-dark mb-3">Diésel</h3>
+						<p class="text-brand-text text-sm leading-relaxed mb-6 flex-grow">
+							Abasto de diésel y diésel industrial de bajas emisiones de contaminantes para transporte de carga, pasajeros y diésel para calderas.
+						</p>
+						<a href="#cotizar" class="text-xs font-bold text-brand-primary uppercase tracking-wider inline-flex items-center gap-1 group">
+							Ver más <i class="ph ph-arrow-right group-hover:translate-x-1 transition-transform text-sm"></i>
+						</a>
+					</div>
+				</div>
+
+				<!-- Card 2: Gas Natural -->
+				<div class="product-card bg-white border border-gray-200/80 rounded-xl overflow-hidden shadow-sm hover:shadow-xl hover:border-brand-primary/30 transition-all duration-300 flex flex-col h-full">
+					<div class="h-52 bg-gray-100 relative overflow-hidden">
+						<img src="/images/gas_natural.webp" alt="Suministro de Gas Natural" class="w-full h-full object-cover  contrast-125 mix-blend-multiply opacity-90" />
+						<div class="absolute top-4 left-4 bg-brand-dark text-white text-[10px] font-bold tracking-wider uppercase px-2.5 py-1 rounded">Alto Rendimiento</div>
+					</div>
+					<div class="p-8 flex flex-col flex-grow">
+						<h3 class="text-xl font-bold text-brand-dark mb-3">Gas Natural</h3>
+						<p class="text-brand-text text-sm leading-relaxed mb-6 flex-grow">
+							Combustible utilizado en procesos industriales, así como generadores de energía eléctrica.
+						</p>
+						<a href="#cotizar" class="text-xs font-bold text-brand-primary uppercase tracking-wider inline-flex items-center gap-1 group">
+							Ver más <i class="ph ph-arrow-right group-hover:translate-x-1 transition-transform text-sm"></i>
+						</a>
+					</div>
+				</div>
+
+				<!-- Card 3: Pesados / Ligeros -->
+				<div class="product-card bg-white border border-gray-200/80 rounded-xl overflow-hidden shadow-sm hover:shadow-xl hover:border-brand-primary/30 transition-all duration-300 flex flex-col h-full">
+					<div class="h-52 bg-gray-100 relative overflow-hidden">
+						<img src="/images/pesados_ligeros.webp" alt="Combustóleo Pesado y Ligero" class="w-full h-full object-cover  contrast-125 mix-blend-multiply opacity-90" />
+						<div class="absolute top-4 left-4 bg-brand-dark text-white text-[10px] font-bold tracking-wider uppercase px-2.5 py-1 rounded">Generación Térmica</div>
+					</div>
+					<div class="p-8 flex flex-col flex-grow">
+						<h3 class="text-xl font-bold text-brand-dark mb-3">Pesados / Ligeros</h3>
+						<p class="text-brand-text text-sm leading-relaxed mb-6 flex-grow">
+							Combustible utilizado en procesos industriales en quemadores, calentadores, y generadores de energía eléctrica.
+						</p>
+						<a href="#cotizar" class="text-xs font-bold text-brand-primary uppercase tracking-wider inline-flex items-center gap-1 group">
+							Ver más <i class="ph ph-arrow-right group-hover:translate-x-1 transition-transform text-sm"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- 3. VALUE PROPOSITION SECTION -->
+	<section id="propuesta" class="py-24 bg-industrial-light">
+		<div class="max-w-7xl mx-auto px-6">
+			<div class="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start mb-16">
+				<div class="lg:col-span-1">
+					<span class="text-xs font-bold uppercase tracking-widest text-brand-primary block mb-2">Centralización Logística</span>
+					<h2 class="text-3xl md:text-4xl font-black tracking-tight text-brand-dark leading-tight">
+						Propuesta de valor
+                    </h2>
+					<div class="h-1 w-12 bg-brand-primary my-4 rounded-full"></div>
+				</div>
+				<div class="lg:col-span-2">
+					<p class="text-base sm:text-lg text-brand-text leading-relaxed">
+						Simplifica tu logística y elimina intermediarios. Con Energex, centralizas toda tu matriz energética en un solo canal:
+					</p>
+				</div>
+			</div>
+
+			<!-- Grid structure for pillars -->
+			<div class="pilar-grid space-y-6">
+				<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+				<!-- Pillar 1 -->
+				<div class="pilar-item relative overflow-hidden bg-brand-dark p-8 border border-gray-800 rounded-xl shadow-sm flex flex-col justify-between group">
+					<div class="absolute inset-0 bg-[url('/images/Proveedor_unico.jpg')] bg-cover bg-center transition-transform duration-700 group-hover:scale-105 opacity-30 mix-blend-luminosity group-hover:mix-blend-normal group-hover:opacity-40"></div>
+					<div class="relative z-10">
+						<div class="w-10 h-10 rounded bg-brand-primary/20 border border-brand-primary/30 flex items-center justify-center text-brand-primary mb-6">
+							<i class="ph ph-truck-route text-2xl"></i>
+						</div>
+						<h3 class="text-lg font-bold text-white mb-2">Proveedor Único</h3>
+						<p class="text-xs sm:text-sm text-gray-300 leading-relaxed">Centraliza con un solo distribuidor la compra de combustibles, flete certificado y soporte de tanque y quemadores.</p>
+					</div>
+				</div>
+				<!-- Pillar 2 -->
+				<div class="pilar-item relative overflow-hidden bg-brand-dark p-8 border border-gray-800 rounded-xl shadow-sm flex flex-col justify-between group">
+					<div class="absolute inset-0 bg-[url('/images/Productos_a_la_Medida.jpg')] bg-cover bg-center transition-transform duration-700 group-hover:scale-105 opacity-30 mix-blend-luminosity group-hover:mix-blend-normal group-hover:opacity-40"></div>
+					<div class="relative z-10">
+						<div class="w-10 h-10 rounded bg-brand-primary/20 border border-brand-primary/30 flex items-center justify-center text-brand-primary mb-6">
+							<i class="ph ph-flask text-2xl"></i>
+						</div>
+						<h3 class="text-lg font-bold text-white mb-2">Productos a la Medida</h3>
+						<p class="text-xs sm:text-sm text-gray-300 leading-relaxed">Infraestructura y laboratorios propios para asegurar el rendimiento exacto de tu combustible.</p>
+					</div>
+				</div>
+				<!-- Pillar 3 -->
+				<div class="pilar-item relative overflow-hidden bg-brand-dark p-8 border border-gray-800 rounded-xl shadow-sm flex flex-col justify-between group">
+					<div class="absolute inset-0 bg-[url('/images/entrega.jpg')] bg-cover bg-center transition-transform duration-700 group-hover:scale-105 opacity-30 mix-blend-luminosity group-hover:mix-blend-normal group-hover:opacity-40"></div>
+					<div class="relative z-10">
+						<div class="w-10 h-10 rounded bg-brand-primary/20 border border-brand-primary/30 flex items-center justify-center text-brand-primary mb-6">
+							<i class="ph ph-clock-countdown text-2xl"></i>
+						</div>
+						<h3 class="text-lg font-bold text-white mb-2">Entrega Oportuna</h3>
+						<p class="text-xs sm:text-sm text-gray-300 leading-relaxed">Garantizamos tu suministro de diésel con más de 500 unidades propias y rastreo satelital las 24 horas, los 365 días.</p>
+					</div>
+				</div>
+				</div>
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+				<!-- Pillar 4 -->
+				<div class="pilar-item relative overflow-hidden bg-brand-dark p-8 border border-gray-800 rounded-xl shadow-sm flex flex-col justify-between group">
+					<div class="absolute inset-0 bg-[url('/images/asistencia_tecnica.jpg')] bg-cover bg-center transition-transform duration-700 group-hover:scale-105 opacity-30 mix-blend-luminosity group-hover:mix-blend-normal group-hover:opacity-40"></div>
+					<div class="relative z-10">
+						<div class="w-10 h-10 rounded bg-brand-primary/20 border border-brand-primary/30 flex items-center justify-center text-brand-primary mb-6">
+							<i class="ph ph-wrench text-2xl"></i>
+						</div>
+						<h3 class="text-lg font-bold text-white mb-2">Asistencia Técnica</h3>
+						<p class="text-xs sm:text-sm text-gray-300 leading-relaxed">Soporte en sitio con expertos en hidrocarburos para resolver anomalías y respaldar tus soluciones energéticas en México.</p>
+					</div>
+				</div>
+				<!-- Pillar 5 -->
+				<div class="pilar-item relative overflow-hidden bg-brand-dark p-8 border border-gray-800 rounded-xl shadow-sm flex flex-col justify-between group">
+					<div class="absolute inset-0 bg-[url('/images/estacion_de_servicio.jpg')] bg-cover bg-center transition-transform duration-700 group-hover:scale-105 opacity-30 mix-blend-luminosity group-hover:mix-blend-normal group-hover:opacity-40"></div>
+					<div class="relative z-10">
+						<div class="w-10 h-10 rounded bg-brand-primary/20 border border-brand-primary/30 flex items-center justify-center text-brand-primary mb-6">
+							<i class="ph ph-gas-pump text-2xl"></i>
+						</div>
+						<h3 class="text-lg font-bold text-white mb-2">Estación de Servicio Propia</h3>
+						<p class="text-xs sm:text-sm text-gray-300 leading-relaxed">Infraestructura de autoconsumo en tu planta para eliminar mermas y optimizar el combustible.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+	</section>
+
+	<!-- 4. COMPARISON MATRIX (BENTO GRID STYLE) -->
+	<section id="comparativa" class="py-24 bg-brand-dark text-white relative overflow-hidden">
+		<div class="max-w-7xl mx-auto px-6 relative z-10">
+			<div class="text-center max-w-3xl mx-auto mb-16">
+				<span class="text-xs font-bold uppercase tracking-widest text-brand-primary block mb-2">Mitigación de Riesgos</span>
+				<h2 class="text-3xl md:text-4xl font-black tracking-tight text-white">Riesgo Operativo vs. Continuidad Energex</h2>
+				<div class="h-1 w-12 bg-brand-primary mx-auto mt-4 rounded-full"></div>
+			</div>
+
+			<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch matrix-container">
+				<!-- Market Risks -->
+				<div class="matrix-card-left bg-zinc-900/50 border border-zinc-800 rounded-2xl p-8 lg:p-12">
+					<div class="flex items-center gap-3 mb-8">
+						<div class="w-2 h-2 rounded-full bg-amber-500 animate-ping"></div>
+						<h3 class="text-xl font-bold text-zinc-200">Mercado Tradicional (Competencia por Precio)</h3>
+					</div>
+					<ul class="space-y-6">
+						<li class="flex items-start gap-4">
+							<i class="ph ph-x-circle text-amber-500 text-xl flex-shrink-0 mt-0.5"></i>
+							<span class="text-sm text-zinc-400"><strong class="text-zinc-200 block mb-0.5">Solo vende el combustible:</strong> Logística fragmentada y sin soporte.</span>
+						</li>
+						<li class="flex items-start gap-4">
+							<i class="ph ph-warning-diamond text-amber-500 text-xl flex-shrink-0 mt-0.5"></i>
+							<span class="text-sm text-zinc-400"><strong class="text-zinc-200 block mb-0.5">Riesgo crítico de desabasto:</strong> Paros imprevistos de calderas y hornos.</span>
+						</li>
+						<li class="flex items-start gap-4">
+							<i class="ph ph-shield-warning text-amber-500 text-xl flex-shrink-0 mt-0.5"></i>
+							<span class="text-sm text-zinc-400"><strong class="text-zinc-200 block mb-0.5">Calidad variable y sin trazabilidad:</strong> Daños severos en maquinaria pesada.</span>
+						</li>
+						<li class="flex items-start gap-4">
+							<i class="ph ph-currency-dollar-simple text-amber-500 text-xl flex-shrink-0 mt-0.5"></i>
+							<span class="text-sm text-zinc-400"><strong class="text-zinc-200 block mb-0.5">Gasto adicional en infraestructura:</strong> Debes comprar tus propios tanques y bombas.</span>
+						</li>
+					</ul>
+				</div>
+
+				<!-- Energex Advantage -->
+				<div class="matrix-card-right bg-black/40 border-2 border-brand-primary/40 rounded-2xl p-8 lg:p-12 relative shadow-2xl">
+					<div class="absolute top-0 right-0 bg-brand-primary text-white text-[9px] uppercase font-black px-4 py-1.5 rounded-bl tracking-widest">Estándar Industrial</div>
+					<div class="flex items-center gap-3 mb-8">
+						<div class="w-2 h-2 rounded-full bg-emerald-500"></div>
+						<h3 class="text-xl font-bold text-white">Solución Energética Integral Energex</h3>
+					</div>
+					<ul class="space-y-6">
+						<li class="flex items-start gap-4">
+							<i class="ph ph-check-circle text-emerald-500 text-xl flex-shrink-0 mt-0.5"></i>
+							<span class="text-sm text-zinc-300"><strong class="text-white block mb-0.5">Proveedor Único:</strong> Suministro, transporte, infraestructura y soporte incluidos.</span>
+						</li>
+						<li class="flex items-start gap-4">
+							<i class="ph ph-factory text-emerald-500 text-xl flex-shrink-0 mt-0.5"></i>
+							<span class="text-sm text-zinc-300"><strong class="text-white block mb-0.5">Inventario y Plantas Estratégicas:</strong> Respaldo total para operaciones de alto consumo.</span>
+						</li>
+						<li class="flex items-start gap-4">
+							<i class="ph ph-certificate text-emerald-500 text-xl flex-shrink-0 mt-0.5"></i>
+							<span class="text-sm text-zinc-300"><strong class="text-white block mb-0.5">Laboratorio y Trazabilidad:</strong> Documentación y pruebas químicas a la medida.</span>
+						</li>
+						<li class="flex items-start gap-4">
+							<i class="ph ph-trend-down text-emerald-500 text-xl flex-shrink-0 mt-0.5"></i>
+							<span class="text-sm text-zinc-300"><strong class="text-white block mb-0.5">Equipo disponible:</strong> Instalación y mantenimiento con cero inversión inicial.</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<!-- Core Value Quote Block -->
+			<div class="mt-16 bg-zinc-900 border border-zinc-800 rounded-xl p-8 text-center max-w-4xl mx-auto quote-box">
+				<p class="text-base sm:text-xl italic font-light text-zinc-300 leading-relaxed max-w-3xl mx-auto">
+					"El combustible más costoso para una industria es aquel que no llega a tiempo y detiene la operación. Con más de 36 años de experiencia en México, en Energex nos encargamos de tu energía para que tú te enfoques en tu negocio."
+				</p>
+				<div class="mt-6">
+					<a href="#cotizar" class="inline-flex items-center gap-2 bg-brand-primary text-white text-xs font-bold uppercase tracking-wider px-6 py-3 rounded hover:bg-red-700 transition-colors">
+						Hablar con un Experto <i class="ph ph-chat-centered-text text-sm"></i>
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- 5. SMART LEAD QUALIFICATION FORM (THE CONVERSION ENGINE) -->
+	<section id="cotizar" class="py-24 bg-white">
+		<div class="max-w-3xl mx-auto px-6">
+			<div class="bg-industrial-light border border-gray-200 rounded-2xl p-8 md:p-12 shadow-sm">
+				<div class="text-center mb-10">
+					<span class="text-[10px] font-bold uppercase tracking-widest text-brand-primary bg-brand-primary/10 px-3 py-1 rounded-full">Alta de Cuenta B2B</span>
+					<h2 class="text-2xl md:text-3xl font-black tracking-tight text-brand-dark mt-3">Cotiza tu Solución Energética a la Medida</h2>
+					<p class="text-sm text-brand-text mt-2">Valida tu volumen de operación técnica para activar el formulario de cotización directa.</p>
+				</div>
+
+				<form id="b2bCommercialForm" class="space-y-6">
+					<!-- INDUSTRIAL FORM FIELDS -->
+					<div id="qualifiedFormFields" class="space-y-6 pt-2">
+						<div class="grid grid-cols-1 sm:grid-cols-1 gap-6">
+							<div>
+								<label class="block text-xs font-bold uppercase tracking-wider text-brand-dark mb-1.5">Nombre Completo</label>
+								<input type="text" name="fullName" placeholder="Ej. Ing. Carlos Mendoza" class="w-full border border-gray-300 rounded-lg p-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-primary bg-white" required />
+							</div>
+							
+						</div>
+
+						<div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+							<div>
+								<label class="block text-xs font-bold uppercase tracking-wider text-brand-dark mb-1.5">Correo Corporativo</label>
+								<input type="email" name="corporateEmail" placeholder="carlos.mendoza@empresa.com" class="w-full border border-gray-300 rounded-lg p-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-primary bg-white" required />
+							</div>
+							
+							<div>
+								<label class="block text-xs font-bold uppercase tracking-wider text-brand-dark mb-1.5">Teléfono Empresarial</label>
+								<input type="tel" name="businessPhone" placeholder="81 1234 5678" class="w-full border border-gray-300 rounded-lg p-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-primary bg-white" required />
+							</div>
+							
+						</div>
+
+						<div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+							<div>
+								<label class="block text-xs font-bold uppercase tracking-wider text-brand-dark mb-1.5">Nombre de la Empresa / Giro Industrial</label>
+								<input type="text" name="companyName" placeholder="Ej. Aceros del Norte / Manufactura" class="w-full border border-gray-300 rounded-lg p-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-primary bg-white" required />
+							</div>
+							<div>
+								<label class="block text-xs font-bold uppercase tracking-wider text-brand-dark mb-1.5">Ciudad de la Operación</label>
+								<input type="text" name="operationCity" placeholder="Ej. Monterrey, N.L." class="w-full border border-gray-300 rounded-lg p-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-primary bg-white" required />
+							</div>
+							
+						</div>
+						<div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+							<div>
+								<label class="block text-xs font-bold uppercase tracking-wider text-brand-dark mb-1.5">¿Qué tipo de energético utiliza tu infraestructura?</label>
+								<select name="energyType" class="w-full border border-gray-300 rounded-lg p-3 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-brand-primary cursor-pointer" required>
+									<option value="" disabled selected>Selecciona un energético...</option>
+									<option value="Diesel Industrial">Diésel Industrial</option>
+									<option value="Combustoleo Ligero/Pesado">Combustóleo Ligero/Pesado</option>
+									<option value="Combustoleo Alterno ED-40">Combustóleo Alterno ED-40</option>
+									<option value="Gas Natural">Gas Natural</option>
+								</select>
+							</div>
+							
+							<div>
+								<label class="block text-xs font-bold uppercase tracking-wider text-brand-dark mb-1.5">¿Tu consumo por pedido es igual o mayor a 5,000 litros?</label>
+								<select name="energyType" class="w-full border border-gray-300 rounded-lg p-3 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-brand-primary cursor-pointer" required>
+									<option value="" disabled selected>Selecciona una opción..</option>
+									<option value="Si">Si</option>
+									<option value="No">No</option>
+								</select>
+							</div>
+						</div>
+
+
+						<div class="pt-4">
+							<button type="submit" class="w-full bg-brand-primary text-white font-bold uppercase tracking-wider py-4 rounded-xl shadow-lg hover:bg-red-700 transition-all text-center cursor-pointer">
+								Enviar Solicitud
+							</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</section>
+
+	<!-- CLIENT-SIDE LOGIC ENGINES -->
+	<script is:inline>
+		document.addEventListener('DOMContentLoaded', () => {
+			const targetForm = document.getElementById('b2bCommercialForm');
+
+			if (targetForm) {
+				targetForm.addEventListener('submit', (e) => {
+					e.preventDefault();
+					alert('Solicitud comercial registrada. Un especialista de cuenta de Energex se pondrá en contacto con su Gerencia de Compras.');
+				});
+			}
+
+			// --- GSAP SCROLL ANIMATIONS ENGINE ---
+			/*
+			if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+				gsap.registerPlugin(ScrollTrigger);
+
+				// Product Cards Grid Reveal
+				gsap.from('.product-card', {
+					scrollTrigger: {
+						trigger: '.cards-container',
+						start: 'top 80%',
+						toggleActions: 'play none none none'
+					},
+					y: 40,
+					opacity: 0,
+					duration: 0.8,
+					stagger: 0.2,
+					ease: 'power2.out'
+				});
+
+				// Pillars Smooth Cascade
+				gsap.from('.pilar-item', {
+					scrollTrigger: {
+						trigger: '.pilar-grid',
+						start: 'top 85%',
+						toggleActions: 'play none none none'
+					},
+					opacity: 0,
+					y: 30,
+					duration: 0.6,
+					stagger: 0.15,
+					ease: 'power1.out'
+				});
+
+				// Risk Matrix Bento Split Reveal
+				gsap.from('.matrix-card-left', {
+					scrollTrigger: {
+						trigger: '.matrix-container',
+						start: 'top 75%',
+					},
+					x: -50,
+					opacity: 0,
+					duration: 0.8,
+					ease: 'power2.out'
+				});
+
+				gsap.from('.matrix-card-right', {
+					scrollTrigger: {
+						trigger: '.matrix-container',
+						start: 'top 75%',
+					},
+					x: 50,
+					opacity: 0,
+					duration: 0.8,
+					ease: 'power2.out'
+				});
+
+				// Quote Fade In
+				gsap.from('.quote-box', {
+					scrollTrigger: {
+						trigger: '.quote-box',
+						start: 'top 90%',
+					},
+					scale: 0.98,
+					opacity: 0,
+					duration: 1,
+					ease: 'power3.out'
+				});
+			}
+			*/
+		});
+	</script>
+</Layout>

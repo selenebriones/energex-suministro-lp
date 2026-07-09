@@ -1,0 +1,34 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-primary: #ff0000;
+  --color-brand-dark: #191919;
+  --color-brand-text: #666666;
+  --color-industrial-light: #f8f9fa;
+  
+  --font-display: "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--font-body);
+    color: var(--color-brand-text);
+    background-color: #ffffff;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    color: var(--color-brand-dark);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+  }
+}
+
+/* Custom Utilities for Zero-Friction B2B UI */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(25, 25, 25, 0.08);
+}
