@@ -288,40 +288,60 @@ import Layout from '../layouts/Layout.astro';
 					<p class="text-sm text-brand-text mt-2">Valida tu volumen de operación técnica para activar el formulario de cotización directa.</p>
 				</div>
 
-				<form id="b2bCommercialForm" class="space-y-6">
+				<form id="b2bCommercialForm" class="space-y-6" novalidate>
+					<!-- Honeypot field: hidden from real users, bots tend to fill it -->
+					<div class="absolute -left-[9999px] opacity-0 pointer-events-none" aria-hidden="true">
+						<label for="website">No llenar este campo</label>
+						<input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
+					</div>
+					<input type="hidden" name="formLoadedAt" id="formLoadedAt" />
+					<input type="hidden" name="utm_source" id="utm_source" />
+					<input type="hidden" name="utm_medium" id="utm_medium" />
+					<input type="hidden" name="utm_campaign" id="utm_campaign" />
+					<input type="hidden" name="utm_term" id="utm_term" />
+					<input type="hidden" name="utm_content" id="utm_content" />
+					<input type="hidden" name="gclid" id="gclid" />
+
+					<div id="formStatus" class="hidden text-sm rounded-lg p-3" role="alert"></div>
+
 					<!-- INDUSTRIAL FORM FIELDS -->
 					<div id="qualifiedFormFields" class="space-y-6 pt-2">
 						<div class="grid grid-cols-1 sm:grid-cols-1 gap-6">
 							<div>
 								<label class="block text-xs font-bold uppercase tracking-wider text-brand-dark mb-1.5">Nombre Completo</label>
-								<input type="text" name="fullName" placeholder="Ej. Ing. Carlos Mendoza" class="w-full border border-gray-300 rounded-lg p-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-primary bg-white" required />
+								<input type="text" name="fullName" placeholder="Ej. Ing. Carlos Mendoza" class="w-full border border-gray-300 rounded-lg p-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-primary bg-white" required minlength="3" maxlength="100" pattern="[A-Za-zÀ-ÖØ-öø-ÿ\s.'-]+" />
+								<p class="field-error hidden text-xs text-red-600 mt-1"></p>
 							</div>
-							
+
 						</div>
 
 						<div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
 							<div>
 								<label class="block text-xs font-bold uppercase tracking-wider text-brand-dark mb-1.5">Correo Corporativo</label>
 								<input type="email" name="corporateEmail" placeholder="carlos.mendoza@empresa.com" class="w-full border border-gray-300 rounded-lg p-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-primary bg-white" required />
+								<p class="field-error hidden text-xs text-red-600 mt-1"></p>
 							</div>
-							
+
 							<div>
 								<label class="block text-xs font-bold uppercase tracking-wider text-brand-dark mb-1.5">Teléfono Empresarial</label>
-								<input type="tel" name="businessPhone" placeholder="81 1234 5678" class="w-full border border-gray-300 rounded-lg p-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-primary bg-white" required />
+								<input type="tel" name="businessPhone" placeholder="81 1234 5678" class="w-full border border-gray-300 rounded-lg p-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-primary bg-white" required minlength="10" maxlength="20" pattern="[0-9()+\-\s]+" />
+								<p class="field-error hidden text-xs text-red-600 mt-1"></p>
 							</div>
-							
+
 						</div>
 
 						<div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
 							<div>
 								<label class="block text-xs font-bold uppercase tracking-wider text-brand-dark mb-1.5">Nombre de la Empresa / Giro Industrial</label>
-								<input type="text" name="companyName" placeholder="Ej. Aceros del Norte / Manufactura" class="w-full border border-gray-300 rounded-lg p-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-primary bg-white" required />
+								<input type="text" name="companyName" placeholder="Ej. Aceros del Norte / Manufactura" class="w-full border border-gray-300 rounded-lg p-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-primary bg-white" required minlength="2" maxlength="150" />
+								<p class="field-error hidden text-xs text-red-600 mt-1"></p>
 							</div>
 							<div>
 								<label class="block text-xs font-bold uppercase tracking-wider text-brand-dark mb-1.5">Ciudad de la Operación</label>
-								<input type="text" name="operationCity" placeholder="Ej. Monterrey, N.L." class="w-full border border-gray-300 rounded-lg p-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-primary bg-white" required />
+								<input type="text" name="operationCity" placeholder="Ej. Monterrey, N.L." class="w-full border border-gray-300 rounded-lg p-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-primary bg-white" required minlength="2" maxlength="100" />
+								<p class="field-error hidden text-xs text-red-600 mt-1"></p>
 							</div>
-							
+
 						</div>
 						<div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
 							<div>
@@ -333,21 +353,23 @@ import Layout from '../layouts/Layout.astro';
 									<option value="Combustoleo Alterno ED-40">Combustóleo Alterno ED-40</option>
 									<option value="Gas Natural">Gas Natural</option>
 								</select>
+								<p class="field-error hidden text-xs text-red-600 mt-1"></p>
 							</div>
-							
+
 							<div>
 								<label class="block text-xs font-bold uppercase tracking-wider text-brand-dark mb-1.5">¿Tu consumo por pedido es igual o mayor a 5,000 litros?</label>
-								<select name="energyType" class="w-full border border-gray-300 rounded-lg p-3 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-brand-primary cursor-pointer" required>
+								<select name="minVolume" class="w-full border border-gray-300 rounded-lg p-3 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-brand-primary cursor-pointer" required>
 									<option value="" disabled selected>Selecciona una opción..</option>
 									<option value="Si">Si</option>
 									<option value="No">No</option>
 								</select>
+								<p class="field-error hidden text-xs text-red-600 mt-1"></p>
 							</div>
 						</div>
 
 
 						<div class="pt-4">
-							<button type="submit" class="w-full bg-brand-primary text-white font-bold uppercase tracking-wider py-4 rounded-xl shadow-lg hover:bg-red-700 transition-all text-center cursor-pointer">
+							<button type="submit" class="w-full bg-brand-primary text-white font-bold uppercase tracking-wider py-4 rounded-xl shadow-lg hover:bg-red-700 transition-all text-center cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed">
 								Enviar Solicitud
 							</button>
 						</div>
@@ -361,11 +383,171 @@ import Layout from '../layouts/Layout.astro';
 	<script is:inline>
 		document.addEventListener('DOMContentLoaded', () => {
 			const targetForm = document.getElementById('b2bCommercialForm');
+			const formLoadedAtInput = document.getElementById('formLoadedAt');
+			const statusBox = document.getElementById('formStatus');
+
+			if (formLoadedAtInput) {
+				formLoadedAtInput.value = String(Date.now());
+			}
+
+			// --- UTM CAPTURE (for Google Ads campaign attribution) ---
+			const UTM_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'gclid'];
+			const UTM_STORAGE_KEY = 'energex_utm_params';
+
+			(function captureUtmParams() {
+				const urlParams = new URLSearchParams(window.location.search);
+				const fromUrl = {};
+				let hasUrlParams = false;
+
+				UTM_KEYS.forEach((key) => {
+					const value = urlParams.get(key);
+					if (value) {
+						fromUrl[key] = value;
+						hasUrlParams = true;
+					}
+				});
+
+				let utmData = fromUrl;
+
+				if (hasUrlParams) {
+					try {
+						sessionStorage.setItem(UTM_STORAGE_KEY, JSON.stringify(fromUrl));
+					} catch (err) {
+						/* sessionStorage unavailable, ignore */
+					}
+				} else {
+					try {
+						const stored = sessionStorage.getItem(UTM_STORAGE_KEY);
+						if (stored) utmData = JSON.parse(stored);
+					} catch (err) {
+						/* sessionStorage unavailable, ignore */
+					}
+				}
+
+				UTM_KEYS.forEach((key) => {
+					const input = document.getElementById(key);
+					if (input) input.value = utmData[key] || '';
+				});
+			})();
+
+			const VALIDATORS = {
+				fullName: {
+					test: (v) => /^[A-Za-zÀ-ÖØ-öø-ÿ\s.'-]{3,100}$/.test(v),
+					message: 'Ingresa un nombre válido (mínimo 3 letras).',
+				},
+				corporateEmail: {
+					test: (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v),
+					message: 'Ingresa un correo válido.',
+				},
+				businessPhone: {
+					test: (v) => /^[0-9()+\-\s]{10,20}$/.test(v),
+					message: 'Ingresa un teléfono válido (mínimo 10 dígitos).',
+				},
+				companyName: {
+					test: (v) => v.length >= 2 && v.length <= 150,
+					message: 'Ingresa el nombre de la empresa.',
+				},
+				operationCity: {
+					test: (v) => v.length >= 2 && v.length <= 100,
+					message: 'Ingresa la ciudad de operación.',
+				},
+				energyType: {
+					test: (v) => v.trim() !== '',
+					message: 'Selecciona un tipo de energético.',
+				},
+				minVolume: {
+					test: (v) => v.trim() !== '',
+					message: 'Selecciona una opción.',
+				},
+			};
+
+			function showFieldError(field, message) {
+				const wrapper = field.closest('div');
+				const errorEl = wrapper ? wrapper.querySelector('.field-error') : null;
+				field.classList.toggle('border-red-500', Boolean(message));
+				if (errorEl) {
+					errorEl.textContent = message || '';
+					errorEl.classList.toggle('hidden', !message);
+				}
+			}
+
+			function validateField(field) {
+				const rule = VALIDATORS[field.name];
+				if (!rule) return true;
+				const value = field.value.trim();
+				const valid = value !== '' && rule.test(value);
+				showFieldError(field, valid ? '' : rule.message);
+				return valid;
+			}
+
+			function showStatus(message, type) {
+				if (!statusBox) return;
+				statusBox.textContent = message;
+				statusBox.classList.remove('hidden', 'bg-green-50', 'text-green-700', 'bg-red-50', 'text-red-700');
+				statusBox.classList.add(type === 'success' ? 'bg-green-50' : 'bg-red-50', type === 'success' ? 'text-green-700' : 'text-red-700');
+			}
 
 			if (targetForm) {
-				targetForm.addEventListener('submit', (e) => {
+				const fields = Array.from(targetForm.querySelectorAll('[name]')).filter(
+					(el) => el.name in VALIDATORS
+				);
+
+				fields.forEach((field) => {
+					field.addEventListener('blur', () => validateField(field));
+					field.addEventListener('input', () => {
+						if (field.classList.contains('border-red-500')) {
+							validateField(field);
+						}
+					});
+				});
+
+				targetForm.addEventListener('submit', async (e) => {
 					e.preventDefault();
-					alert('Solicitud comercial registrada. Un especialista de cuenta de Energex se pondrá en contacto con su Gerencia de Compras.');
+
+					let isValid = true;
+					fields.forEach((field) => {
+						if (!validateField(field)) isValid = false;
+					});
+
+					if (!isValid) {
+						showStatus('Revisa los campos marcados en rojo.', 'error');
+						return;
+					}
+
+					const formData = new FormData(targetForm);
+					const payload = Object.fromEntries(formData.entries());
+
+					const submitButton = targetForm.querySelector('button[type="submit"]');
+					if (submitButton) submitButton.disabled = true;
+					showStatus('Enviando solicitud...', 'success');
+
+					try {
+						const response = await fetch('/api/lead', {
+							method: 'POST',
+							headers: { 'Content-Type': 'application/json' },
+							body: JSON.stringify(payload),
+						});
+
+						const result = await response.json();
+
+						if (!response.ok) {
+							if (result.errors) {
+								Object.entries(result.errors).forEach(([name, message]) => {
+									const field = targetForm.querySelector(`[name="${name}"]`);
+									if (field) showFieldError(field, message);
+								});
+							}
+							showStatus(result.error || 'No se pudo enviar la solicitud. Revisa los campos.', 'error');
+							return;
+						}
+
+						window.location.href = '/gracias';
+						return;
+					} catch (err) {
+						showStatus('Ocurrió un error de conexión. Intenta de nuevo.', 'error');
+					} finally {
+						if (submitButton) submitButton.disabled = false;
+					}
 				});
 			}
 
