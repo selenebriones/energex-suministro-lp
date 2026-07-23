@@ -5,7 +5,7 @@ export const prerender = false;
 const BREVO_API_URL = 'https://api.brevo.com/v3/smtp/email';
 const SENDER_EMAIL = 'noreply@futurite.info';
 const RECIPIENT_EMAILS = ['selene.briones@kodex.mx'];
-const N8N_WEBHOOK_URL = 'https://n8n.ongoing.mx/webhook-test/3468d245-a3bd-40ff-928d-067252110d78';
+const N8N_WEBHOOK_URL = import.meta.env.N8N_WEBHOOK_URL;
 
 const ENERGY_TYPES = new Set([
 	'Diesel Industrial',
