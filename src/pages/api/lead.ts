@@ -4,7 +4,7 @@ export const prerender = false;
 
 const BREVO_API_URL = 'https://api.brevo.com/v3/smtp/email';
 const SENDER_EMAIL = 'noreply@futurite.info';
-const RECIPIENT_EMAILS = ['selene.briones@kodex.mx'];
+const RECIPIENT_EMAILS = ['ventas@grupoenergeticos.com'];
 const N8N_WEBHOOK_URL = import.meta.env.N8N_WEBHOOK_URL;
 
 const ENERGY_TYPES = new Set([
